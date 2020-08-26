@@ -56,15 +56,39 @@
 		6D2AC24524F23EF700702704 /* KaldisCafe_ModernMenu */ = {
 			isa = PBXGroup;
 			children = (
+				6D71981824F64BEF00E81620 /* Model */,
+				6D71981924F64C1500E81620 /* View */,
+				6D71981A24F64C1D00E81620 /* Controller */,
 				6D2AC24624F23EF700702704 /* AppDelegate.swift */,
 				6D2AC24824F23EF700702704 /* SceneDelegate.swift */,
-				6D2AC24A24F23EF700702704 /* ViewController.swift */,
-				6D2AC24C24F23EF700702704 /* Main.storyboard */,
 				6D2AC24F24F23EF800702704 /* Assets.xcassets */,
 				6D2AC25124F23EF800702704 /* LaunchScreen.storyboard */,
 				6D2AC25424F23EF800702704 /* Info.plist */,
 			);
 			path = KaldisCafe_ModernMenu;
+			sourceTree = "<group>";
+		};
+		6D71981824F64BEF00E81620 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D71981924F64C1500E81620 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D2AC24C24F23EF700702704 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D71981A24F64C1D00E81620 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D2AC24A24F23EF700702704 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
