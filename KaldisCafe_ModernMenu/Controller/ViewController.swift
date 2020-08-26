@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var test = Menu()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        print(test.menu[0][0][0].description)
     }
 
 
