@@ -16,4 +16,32 @@ struct Menu {
         
         return [foodMenu, drinkMenu]
     }
+    
+    func get(_ feature: String , of name: String, in theMenu: [[[MenuItem]]]) -> Any {
+        
+        // LOOP THROUGH MENU
+        for menuType in theMenu {
+            for subMenuType in menuType {
+                for item in subMenuType {
+                    
+                    // IF ITEM FOUND PRINT DESIRED FEATURE
+                    if (item.name == name) {
+                        switch feature {
+                        case "name":
+                            return item.name
+                        case "description":
+                            return item.description
+                        case "price":
+                            return item.price
+                        default:
+                            return item.name
+                        }
+                    }
+                }
+            }
+        }
+        
+        // TESTING: NON MENU ITEM PARSED
+        return "No a menu item"
+    }
 }

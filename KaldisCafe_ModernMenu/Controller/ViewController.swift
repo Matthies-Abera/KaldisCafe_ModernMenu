@@ -9,13 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var test = Menu()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(test.menu[0][0][0].description)
+        // IMPLEMENT HERE
     }
 
 
