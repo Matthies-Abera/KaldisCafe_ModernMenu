@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1B7D6B24FCF81200B66B83 /* ViewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B7D6A24FCF81200B66B83 /* ViewMenuViewController.swift */; };
 		6D2AC24724F23EF700702704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2AC24624F23EF700702704 /* AppDelegate.swift */; };
 		6D2AC24924F23EF700702704 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2AC24824F23EF700702704 /* SceneDelegate.swift */; };
 		6D2AC24B24F23EF700702704 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2AC24A24F23EF700702704 /* WelcomeViewController.swift */; };
@@ -25,12 +26,11 @@
 		6D2E0BC424F69E380071B6F5 /* CoffeeCeremony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BC324F69E380071B6F5 /* CoffeeCeremony.swift */; };
 		6D6D360E24FA7A2B0092599B /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D360D24FA7A2B0092599B /* RoundButton.swift */; };
 		6DBFB52824FA97CF00751082 /* MenuOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBFB52724FA97CF00751082 /* MenuOptionsViewController.swift */; };
-		6DBFB52A24FA97DF00751082 /* ViewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBFB52924FA97DF00751082 /* ViewMenuViewController.swift */; };
 		6DBFB52C24FAA3F000751082 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBFB52B24FAA3F000751082 /* ItemInfoViewController.swift */; };
-		6DBFB52E24FAA85900751082 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBFB52D24FAA85900751082 /* TestingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D1B7D6A24FCF81200B66B83 /* ViewMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenuViewController.swift; sourceTree = "<group>"; };
 		6D2AC24324F23EF700702704 /* KaldisCafe_ModernMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaldisCafe_ModernMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2AC24624F23EF700702704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D2AC24824F23EF700702704 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,9 +51,7 @@
 		6D2E0BC324F69E380071B6F5 /* CoffeeCeremony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCeremony.swift; sourceTree = "<group>"; };
 		6D6D360D24FA7A2B0092599B /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		6DBFB52724FA97CF00751082 /* MenuOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionsViewController.swift; sourceTree = "<group>"; };
-		6DBFB52924FA97DF00751082 /* ViewMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenuViewController.swift; sourceTree = "<group>"; };
 		6DBFB52B24FAA3F000751082 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
-		6DBFB52D24FAA85900751082 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +127,8 @@
 			children = (
 				6D2AC24A24F23EF700702704 /* WelcomeViewController.swift */,
 				6DBFB52724FA97CF00751082 /* MenuOptionsViewController.swift */,
-				6DBFB52924FA97DF00751082 /* ViewMenuViewController.swift */,
+				6D1B7D6A24FCF81200B66B83 /* ViewMenuViewController.swift */,
 				6DBFB52B24FAA3F000751082 /* ItemInfoViewController.swift */,
-				6DBFB52D24FAA85900751082 /* TestingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,12 +211,11 @@
 				6D2E0BBA24F69DDD0071B6F5 /* VegetarianMenu.swift in Sources */,
 				6D2E0BC024F69E160071B6F5 /* DrinkMenu.swift in Sources */,
 				6DBFB52C24FAA3F000751082 /* ItemInfoViewController.swift in Sources */,
-				6DBFB52A24FA97DF00751082 /* ViewMenuViewController.swift in Sources */,
+				6D1B7D6B24FCF81200B66B83 /* ViewMenuViewController.swift in Sources */,
 				6D2E0BC424F69E380071B6F5 /* CoffeeCeremony.swift in Sources */,
 				6D2AC24724F23EF700702704 /* AppDelegate.swift in Sources */,
 				6DBFB52824FA97CF00751082 /* MenuOptionsViewController.swift in Sources */,
 				6D2E0BBE24F69E070071B6F5 /* ExtrasMenu.swift in Sources */,
-				6DBFB52E24FAA85900751082 /* TestingViewController.swift in Sources */,
 				6D2E0BC224F69E2A0071B6F5 /* BeverageMenu.swift in Sources */,
 				6D2E0BB824F69DCF0071B6F5 /* LunchAndDinnerMenu.swift in Sources */,
 				6D2AC24924F23EF700702704 /* SceneDelegate.swift in Sources */,

@@ -16,11 +16,11 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func orderPressed(_ sender: RoundButton) {
-        self.performSegue(withIdentifier: "goToMenuOptions", sender: self)
+        
     }
     
     @IBAction func menuPressed(_ sender: RoundButton) {
-        
+        self.performSegue(withIdentifier: "goToMenuOptions", sender: self)
     }
     
     
