@@ -933,7 +933,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="r7k-cS-fO4"/>
                     <connections>
-                        <outlet property="itemInformation" destination="B5J-vP-1iO" id="Boq-tH-WJj"/>
+                        <outlet property="itemInformationLabel" destination="B5J-vP-1iO" id="NhL-zj-oVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETP-TT-UmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

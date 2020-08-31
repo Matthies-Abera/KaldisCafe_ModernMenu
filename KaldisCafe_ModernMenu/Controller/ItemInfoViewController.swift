@@ -13,13 +13,13 @@ class ItemInfoViewController: UIViewController {
     var chosenMenuItem : String?
     var menu = Menu()
     
-    @IBOutlet weak var itemInformation: UILabel!
+    @IBOutlet weak var itemInformationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let safe = chosenMenuItem {
-            itemInformation.text = displayItemInformation(for: safe)
+        if let safeMenuItem = chosenMenuItem {
+            itemInformationLabel.text = displayItemInformation(for: safeMenuItem)
         }
     }
     
