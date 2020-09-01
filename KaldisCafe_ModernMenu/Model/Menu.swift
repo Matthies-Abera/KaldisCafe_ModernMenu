@@ -44,4 +44,21 @@ struct Menu {
         // TESTING: NON MENU ITEM PARSED
         return "No a menu item"
     }
+    
+    func alreadyContains(_ name: String, in theMenu: [[[MenuItem]]]) -> Bool {
+        
+        // LOOP THROUGH MENU: IF ITEM FOUND RETURN TRUE
+        for menuType in theMenu {
+            for subMenuType in menuType {
+                for item in subMenuType {
+                    if (item.name.uppercased() == name.uppercased()) {
+                        return true
+                    }
+                }
+            }
+        }
+
+        // IF NOT FOUND RETURN FALSE
+        return false
+    }
 }
