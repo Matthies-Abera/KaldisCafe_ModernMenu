@@ -14,6 +14,7 @@
 		6D2AC24E24F23EF700702704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2AC24C24F23EF700702704 /* Main.storyboard */; };
 		6D2AC25024F23EF800702704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2AC24F24F23EF800702704 /* Assets.xcassets */; };
 		6D2AC25324F23EF800702704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2AC25124F23EF800702704 /* LaunchScreen.storyboard */; };
+		6D2BCEFA2503C09800731527 /* EditMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2BCEF92503C09800731527 /* EditMenuItemViewController.swift */; };
 		6D2E0BB224F69DA60071B6F5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BB124F69DA60071B6F5 /* MenuItem.swift */; };
 		6D2E0BB424F69DB40071B6F5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BB324F69DB40071B6F5 /* Menu.swift */; };
 		6D2E0BB624F69DBF0071B6F5 /* BreakfastMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BB524F69DBF0071B6F5 /* BreakfastMenu.swift */; };
@@ -42,6 +43,7 @@
 		6D2AC24F24F23EF800702704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D2AC25224F23EF800702704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D2AC25424F23EF800702704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D2BCEF92503C09800731527 /* EditMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuItemViewController.swift; sourceTree = "<group>"; };
 		6D2E0BB124F69DA60071B6F5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		6D2E0BB324F69DB40071B6F5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		6D2E0BB524F69DBF0071B6F5 /* BreakfastMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastMenu.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				6D1B7D6A24FCF81200B66B83 /* ViewMenuViewController.swift */,
 				6DBFB52B24FAA3F000751082 /* ItemInfoViewController.swift */,
 				6DA0B14724FD252800BCF9FA /* AddMenuItemViewController.swift */,
+				6D2BCEF92503C09800731527 /* EditMenuItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				6D6D360E24FA7A2B0092599B /* RoundButton.swift in Sources */,
 				6D69D64124FFCB26006FC8EA /* MenuBrain.swift in Sources */,
 				6D2E0BB224F69DA60071B6F5 /* MenuItem.swift in Sources */,
+				6D2BCEFA2503C09800731527 /* EditMenuItemViewController.swift in Sources */,
 				6D2E0BBA24F69DDD0071B6F5 /* VegetarianMenu.swift in Sources */,
 				6D2E0BC024F69E160071B6F5 /* DrinkMenu.swift in Sources */,
 				6DBFB52C24FAA3F000751082 /* ItemInfoViewController.swift in Sources */,
