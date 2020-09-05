@@ -11,7 +11,7 @@ import UIKit
 class ItemInfoViewController: UIViewController {
 
     var chosenMenuItem : String?
-    var menu = Menu()
+    var menu = MenuBrain()
     
     @IBOutlet weak var itemInformationLabel: UILabel!
     

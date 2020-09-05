@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UQr-Ya-kHZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UQr-Ya-kHZ">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1130,6 +1130,7 @@
                         <outlet property="menuTypePicker" destination="ij8-AQ-C3s" id="KYu-TU-OaK"/>
                         <outlet property="nameTextField" destination="A8c-cx-X4s" id="QPn-1W-imM"/>
                         <outlet property="priceLabel" destination="i55-lS-Rle" id="2yb-Y3-jI9"/>
+                        <outlet property="priceStepperOutlet" destination="6gv-c0-OF0" id="xpV-Tp-zxr"/>
                         <outlet property="subMenuTypePicker" destination="g0E-Gc-eQg" id="U9u-Uq-mzn"/>
                     </connections>
                 </viewController>
