@@ -29,5 +29,18 @@ struct MenuTypesManager {
         ["beverage", "coffee ceremony"]
     ]
     
+    let foodSubMenus = [
+    
+        ["Qinche", "Foule", "Che-che-bsa", "Scrambled Eggs", "Enkulal Besiga", "Breakfast Combination"],
+        ["Tibs", "Goden Tibs", "Derek Tibs", "Quanta Firfir", "Kitfo", "Kei Wot"],
+        ["Shiro", "Ater Kik Wot", "Atkilt Wot", "Mild misir wot"],
+        ["Salad", "Spaghetti", "Assa Mild"]
+    ]
+    
+    let drinkSubMenus = [
+        
+        ["Coffee", "Tea", "Soft Drinks", "Hot Chocolate", "Local Beers", "Ethiopian Beers", "Amber Beer"],
+        ["Coffee Ceremony"]
+    ]
     
 }

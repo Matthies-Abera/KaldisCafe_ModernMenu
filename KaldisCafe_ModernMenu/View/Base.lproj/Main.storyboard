@@ -1147,23 +1147,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="712" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="iba-Xy-gmg">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="iba-Xy-gmg">
                                 <rect key="frame" x="35" y="35" width="642" height="658"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Edit Item Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGT-yZ-mh5">
-                                        <rect key="frame" x="229.5" y="0.0" width="183.5" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Edit Item Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGT-yZ-mh5">
+                                        <rect key="frame" x="229.5" y="0.0" width="183.5" height="62"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aP9-43-SXf">
-                                        <rect key="frame" x="0.0" y="68" width="642" height="452"/>
+                                        <rect key="frame" x="0.0" y="92" width="642" height="438"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1bD-nb-1Fc">
-                                                <rect key="frame" x="0.0" y="0.0" width="642" height="258"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="642" height="244"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="4Oq-7g-weR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="258"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Oq-7g-weR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="244"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGa-35-6C2">
                                                                 <rect key="frame" x="54" y="0.0" width="106" height="28"/>
@@ -1172,12 +1172,12 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nhm-59-yIn">
-                                                                <rect key="frame" x="0.0" y="42" width="214" height="216"/>
+                                                                <rect key="frame" x="0.0" y="28" width="214" height="216"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="esT-2X-5Cs">
-                                                        <rect key="frame" x="214" y="0.0" width="214" height="258"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="esT-2X-5Cs">
+                                                        <rect key="frame" x="214" y="0.0" width="214" height="244"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Menu Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7me-WX-nlY">
                                                                 <rect key="frame" x="32.5" y="0.0" width="149" height="28"/>
@@ -1186,12 +1186,12 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-0d-KMz">
-                                                                <rect key="frame" x="0.0" y="42" width="214" height="216"/>
+                                                                <rect key="frame" x="0.0" y="28" width="214" height="216"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-uc-tZs">
-                                                        <rect key="frame" x="428" y="0.0" width="214" height="258"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-uc-tZs">
+                                                        <rect key="frame" x="428" y="0.0" width="214" height="244"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-ND-0VL">
                                                                 <rect key="frame" x="56.5" y="0.0" width="101" height="28"/>
@@ -1200,14 +1200,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81G-ic-WA4">
-                                                                <rect key="frame" x="0.0" y="42" width="214" height="216"/>
+                                                                <rect key="frame" x="0.0" y="28" width="214" height="216"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1rj-7m-ygg">
-                                                <rect key="frame" x="0.0" y="278" width="642" height="174"/>
+                                                <rect key="frame" x="0.0" y="264" width="642" height="174"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="eij-Z5-KLT">
                                                         <rect key="frame" x="0.0" y="0.0" width="642" height="72"/>
@@ -1246,8 +1246,11 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="F9L-ro-nbs">
+                                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="F9L-ro-nbs">
                                                                                 <rect key="frame" x="74.5" y="0.0" width="94" height="32"/>
+                                                                                <connections>
+                                                                                    <action selector="priceStepper:" destination="Kuz-ud-ZbD" eventType="valueChanged" id="ohT-AY-NWU"/>
+                                                                                </connections>
                                                                             </stepper>
                                                                         </subviews>
                                                                     </stackView>
@@ -1276,7 +1279,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blah Blah Blah ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOB-Wv-yxd">
-                                        <rect key="frame" x="242.5" y="555" width="157.5" height="28"/>
+                                        <rect key="frame" x="242.5" y="560" width="157.5" height="28"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1299,6 +1302,9 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="editItemPressed:" destination="Kuz-ud-ZbD" eventType="touchUpInside" id="ffT-Mz-3dM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1317,6 +1323,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gjm-Fq-g3v"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="LJP-E7-cGc" id="Cgj-tf-q4f"/>
+                        <outlet property="invalidItemLabel" destination="VOB-Wv-yxd" id="Xui-Ak-yxJ"/>
+                        <outlet property="menuItemPicker" destination="81G-ic-WA4" id="vmI-qN-Mn6"/>
+                        <outlet property="menuTypePicker" destination="Nhm-59-yIn" id="L9y-du-2HO"/>
+                        <outlet property="nameTextField" destination="Hqd-28-454" id="6ua-Fa-xEJ"/>
+                        <outlet property="priceLabel" destination="I3T-sB-DRk" id="oyp-xf-Wde"/>
+                        <outlet property="priceStepperOutlet" destination="F9L-ro-nbs" id="jqT-Bi-sA9"/>
+                        <outlet property="subMenuTypePicker" destination="q9g-0d-KMz" id="5Qu-4H-XAM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJ5-wc-fqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
