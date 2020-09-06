@@ -1,16 +1,16 @@
 //
-//  EditMenuItemViewController.swift
+//  DeleteItemViewController.swift
 //  KaldisCafe_ModernMenu
 //
-//  Created by Matthies Abera on 5/9/20.
+//  Created by Matthies Abera on 6/9/20.
 //  Copyright © 2020 Thinking Bear Solutions. All rights reserved.
 //
 
 import UIKit
 
-// TODO: AT LATER STAGE - UPDATE PICKER VIEWS ONCE ITEM IS EDITED
+// TODO: AT LATER STAGE - UPDATE PICKER VIEWS ONCE ITEM IS DELETE
 
-class EditMenuItemViewController: UIViewController {
+class DeleteMenuItemViewController: UIViewController {
 
     var menu = MenuBrain()
     
@@ -27,47 +27,17 @@ class EditMenuItemViewController: UIViewController {
     @IBOutlet weak var subMenuTypePicker: UIPickerView!
     @IBOutlet weak var menuItemPicker: UIPickerView!
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var invalidItemLabel: UILabel!
-    @IBOutlet weak var priceStepperOutlet: UIStepper!
-    
-    @IBAction func priceStepper(_ sender: UIStepper) {
-        priceLabel.text = "$\(sender.value/2)0"
-    }
-    
-    @IBAction func editItemPressed(_ sender: RoundButton) {
+    @IBAction func deleteItemPressed(_ sender: RoundButton) {
         
-        if nameTextField.text != "" && descriptionTextField.text != "" {
-            
-            invalidItemLabel.isHidden = true
-            
-            // ALL THE PROPERTIES OF ITEM TO ADD TO MENU
-            let itemName = nameTextField.text!
-            let itemDescription = descriptionTextField.text!
-            let selectedPrice = Float(priceStepperOutlet.value/2)
-            
-            DispatchQueue.main.async {
-                let item = MenuItem(name: itemName, description: itemDescription, price: selectedPrice)
-                self.menu.edit(item, in: self.menuRowSelected, and: self.subMenuRowSelected, and: self.menuItemSelected)
-            }
-        } else {
-            invalidItemLabel.text = "Invalid Item: Please Enter Values for All Relevant Fields"
-            invalidItemLabel.isHidden = false
+        DispatchQueue.main.async {
+            print(self.menu.menu[self.menuRowSelected][self.subMenuRowSelected].count)
+            self.menu.deleteItem(in: self.menuRowSelected, and: self.subMenuRowSelected, and: self.menuItemSelected)
+            print(self.menu.menu[self.menuRowSelected][self.subMenuRowSelected].count)
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // PRE LOAD CORRECT VIEW FOR FIRST ITEM DISPLAYED
-        nameTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].name
-        descriptionTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].description
-        priceStepperOutlet.value = Double(menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].price)*2
-        priceLabel.text = "$\(priceStepperOutlet.value/2)0"
         
         // ASSIGNING DELEGATES
         menuTypePicker.dataSource = self
@@ -78,9 +48,6 @@ class EditMenuItemViewController: UIViewController {
         
         menuItemPicker.dataSource = self
         menuItemPicker.delegate = self
-        
-        nameTextField.delegate = self
-        descriptionTextField.delegate = self
         
         // DEFAULT SUB MENUS
         self.selectedMenuArray = menuTypesManager.subMenuNames[0]
@@ -117,45 +84,9 @@ class EditMenuItemViewController: UIViewController {
 
 }
 
-//MARK: - UITextFieldDelegate
-extension EditMenuItemViewController: UITextFieldDelegate {
-    
-    // TODO: CAN REMOVE LATER
-    @IBAction func searchPressed(_ sender: UIButton) {
-        
-        if sender == nameTextField {
-            nameTextField.endEditing(true)
-        } else if sender == descriptionTextField {
-            descriptionTextField.endEditing(true)
-        }
-    }
-    
-    // Notifies the UI when return has been pressed
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if textField == nameTextField {
-            nameTextField.endEditing(true)
-        } else if textField == descriptionTextField {
-            descriptionTextField.endEditing(true)
-        }
-        
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
-        // TODO: EDIT RETURN VALUE TO ALLOW TO END EDITING ON EMPTY STRING
-        if(textField.text != "") {
-            return true
-        } else {
-            textField.placeholder = "Type Something"
-            return false
-        }
-    }
-}
 
 //MARK: - UIPickerViewDataSource
-extension EditMenuItemViewController: UIPickerViewDataSource {
+extension DeleteMenuItemViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == menuTypePicker {
@@ -178,7 +109,7 @@ extension EditMenuItemViewController: UIPickerViewDataSource {
 }
 
 //MARK: - UIPickerViewDelegate
-extension EditMenuItemViewController: UIPickerViewDelegate {
+extension DeleteMenuItemViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == menuTypePicker {
@@ -258,18 +189,12 @@ extension EditMenuItemViewController: UIPickerViewDelegate {
         self.menuTypePicker.selectRow(menuRowSelected, inComponent: 0, animated: false)
         self.subMenuTypePicker.selectRow(subMenuRowSelected, inComponent: 0, animated: false)
         self.menuItemPicker.selectRow(menuItemSelected, inComponent: 0, animated: false)
-        
-        // ADJUST NAME, DESCRIPTION AND PRICE LABELS (+ STEPPER VALUE)
-        nameTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].name
-        descriptionTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].description
-        priceStepperOutlet.value = Double(menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].price)*2
-        priceLabel.text = "$\(priceStepperOutlet.value/2)0"
     }
     
 }
 
 //MARK: - MenuTypesManagerDelegate
-extension EditMenuItemViewController: MenuTypesManagerDelegate {
+extension DeleteMenuItemViewController: MenuTypesManagerDelegate {
     
     // TODO: CAN REMOVE LATER
     func didUpdateSubMenuTypes(_ MenuTypesManager: MenuTypesManager, _ subMenu: [String]) {
@@ -283,3 +208,4 @@ extension EditMenuItemViewController: MenuTypesManagerDelegate {
         print(error)
     }
 }
+

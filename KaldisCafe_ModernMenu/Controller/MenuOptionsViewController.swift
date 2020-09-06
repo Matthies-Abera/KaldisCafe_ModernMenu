@@ -23,6 +23,7 @@ class MenuOptionsViewController: UIViewController {
     }
     
     @IBAction func deleteMenuItemPressed(_ sender: RoundButton) {
+        self.performSegue(withIdentifier: "goToDeleteMenuItem", sender: self)
     }
     
     

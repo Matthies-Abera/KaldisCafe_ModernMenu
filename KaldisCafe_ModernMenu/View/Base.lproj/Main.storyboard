@@ -252,6 +252,7 @@
                         <segue destination="MgZ-NB-OVX" kind="show" identifier="goToViewMenu" id="RFJ-il-gfY"/>
                         <segue destination="V4P-RD-76S" kind="presentation" identifier="goToAddMenuItem" id="xxB-Ua-lAj"/>
                         <segue destination="Kuz-ud-ZbD" kind="presentation" identifier="goToEditMenuItem" id="znc-hf-efm"/>
+                        <segue destination="La4-V6-5qO" kind="presentation" identifier="goToDeleteMenuItem" id="C6m-QC-quh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cc-Rv-hmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1290,7 +1291,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4IF-gT-d4v"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="18"/>
                                         <state key="normal" title="Edit Item">
                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </state>
@@ -1336,7 +1337,119 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJ5-wc-fqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2265.8203125" y="951.5625"/>
+            <point key="canvasLocation" x="2266" y="971"/>
+        </scene>
+        <!--Delete Menu Item View Controller-->
+        <scene sceneID="O4C-wK-EHw">
+            <objects>
+                <viewController id="La4-V6-5qO" customClass="DeleteMenuItemViewController" customModule="KaldisCafe_ModernMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iyq-sy-eUy">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="PbV-hP-5Aw">
+                                <rect key="frame" x="35" y="35" width="642" height="658"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Item Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcJ-gT-kiz">
+                                        <rect key="frame" x="214" y="0.0" width="214" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c6s-iu-aAb">
+                                        <rect key="frame" x="0.0" y="146.5" width="642" height="371.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="68M-0E-nuO">
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="371.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-py-xSn">
+                                                        <rect key="frame" x="49" y="0.0" width="106" height="28"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-IE-1xr">
+                                                        <rect key="frame" x="0.0" y="28" width="204" height="343.5"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dLz-zW-lK2">
+                                                <rect key="frame" x="219" y="0.0" width="204" height="371.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Menu Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-6x-cUd">
+                                                        <rect key="frame" x="27.5" y="0.0" width="149" height="28"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-hm-TAc">
+                                                        <rect key="frame" x="0.0" y="28" width="204" height="343.5"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-d4-8Ee">
+                                                <rect key="frame" x="438" y="0.0" width="204" height="371.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBK-dT-mxa">
+                                                        <rect key="frame" x="51.5" y="0.0" width="101" height="28"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bs-lc-t55">
+                                                        <rect key="frame" x="0.0" y="28" width="204" height="343.5"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukK-Gf-H3o" customClass="RoundButton" customModule="KaldisCafe_ModernMenu" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="618" width="242" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9pQ-W4-f9W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="18"/>
+                                        <state key="normal" title="Delete Item">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteItemPressed:" destination="La4-V6-5qO" eventType="touchUpInside" id="hHZ-zO-R7y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ukK-Gf-H3o" secondAttribute="trailing" constant="200" id="9WY-Vz-z8B"/>
+                                    <constraint firstItem="ukK-Gf-H3o" firstAttribute="leading" secondItem="PbV-hP-5Aw" secondAttribute="leading" constant="200" id="qcb-1d-kJB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PbV-hP-5Aw" secondAttribute="trailing" constant="35" id="X2c-4J-ptc"/>
+                            <constraint firstItem="PbV-hP-5Aw" firstAttribute="leading" secondItem="0ky-Fq-DFx" secondAttribute="leading" constant="35" id="dJq-ad-KSw"/>
+                            <constraint firstItem="0ky-Fq-DFx" firstAttribute="bottom" secondItem="PbV-hP-5Aw" secondAttribute="bottom" constant="35" id="eCo-nk-IWf"/>
+                            <constraint firstItem="PbV-hP-5Aw" firstAttribute="top" secondItem="0ky-Fq-DFx" secondAttribute="top" constant="35" id="eru-qd-WQB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0ky-Fq-DFx"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuItemPicker" destination="5Bs-lc-t55" id="H5z-46-BCE"/>
+                        <outlet property="menuTypePicker" destination="gQt-IE-1xr" id="Mt5-IH-HjS"/>
+                        <outlet property="subMenuTypePicker" destination="j2A-hm-TAc" id="h7j-YI-q5s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4D-k1-6rj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1561.5234375" y="970.3125"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,7 @@
 		6D2AC25024F23EF800702704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2AC24F24F23EF800702704 /* Assets.xcassets */; };
 		6D2AC25324F23EF800702704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2AC25124F23EF800702704 /* LaunchScreen.storyboard */; };
 		6D2BCEFA2503C09800731527 /* EditMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2BCEF92503C09800731527 /* EditMenuItemViewController.swift */; };
+		6D2BCEFC25049BF900731527 /* DeleteItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2BCEFB25049BF900731527 /* DeleteItemViewController.swift */; };
 		6D2E0BB224F69DA60071B6F5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BB124F69DA60071B6F5 /* MenuItem.swift */; };
 		6D2E0BB424F69DB40071B6F5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BB324F69DB40071B6F5 /* Menu.swift */; };
 		6D2E0BB624F69DBF0071B6F5 /* BreakfastMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BB524F69DBF0071B6F5 /* BreakfastMenu.swift */; };
@@ -44,6 +45,7 @@
 		6D2AC25224F23EF800702704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D2AC25424F23EF800702704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2BCEF92503C09800731527 /* EditMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuItemViewController.swift; sourceTree = "<group>"; };
+		6D2BCEFB25049BF900731527 /* DeleteItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemViewController.swift; sourceTree = "<group>"; };
 		6D2E0BB124F69DA60071B6F5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		6D2E0BB324F69DB40071B6F5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		6D2E0BB524F69DBF0071B6F5 /* BreakfastMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastMenu.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				6DBFB52B24FAA3F000751082 /* ItemInfoViewController.swift */,
 				6DA0B14724FD252800BCF9FA /* AddMenuItemViewController.swift */,
 				6D2BCEF92503C09800731527 /* EditMenuItemViewController.swift */,
+				6D2BCEFB25049BF900731527 /* DeleteItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				6DA0B14C24FD2C4B00BCF9FA /* MenuTypesManager.swift in Sources */,
 				6D1B7D6B24FCF81200B66B83 /* ViewMenuViewController.swift in Sources */,
 				6D2E0BC424F69E380071B6F5 /* CoffeeCeremony.swift in Sources */,
+				6D2BCEFC25049BF900731527 /* DeleteItemViewController.swift in Sources */,
 				6D2AC24724F23EF700702704 /* AppDelegate.swift in Sources */,
 				6DBFB52824FA97CF00751082 /* MenuOptionsViewController.swift in Sources */,
 				6D2E0BBE24F69E070071B6F5 /* ExtrasMenu.swift in Sources */,
