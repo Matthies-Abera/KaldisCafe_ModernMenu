@@ -8,16 +8,7 @@
 
 import Foundation
 
-protocol MenuTypesManagerDelegate {
-    
-    func didUpdateSubMenuTypes(_ MenuTypesManager: MenuTypesManager, _ subMenu: [String])
-    
-    func didFailWithError(_ error: Error)
-}
-
 struct MenuTypesManager {
-    
-    var delegate: MenuTypesManagerDelegate?
     
     let menuNames = [
         "food menu",

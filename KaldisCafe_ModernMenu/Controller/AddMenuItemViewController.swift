@@ -8,11 +8,8 @@
 
 import UIKit
 
-// TODO: FIX WEIRD BUG WITH KEYBOARD BEING UNABLE TO MINIMISE WHEN TEXTFIELD IS EMPTY
-// TODO: FIX WEIRD BUG WITH KEYBOARD BEING UNABLE TO MINIMISE WHEN CLICKED OFF VIEW
 // TODO: ONCE COMPLETE WITH ADD, EDIT AND DELETE - MAKE MENU INSTANCE UNIVERSAL!
-
-// TODO: AT LATER STAGE - UPDATE PICKER VIEWS ONCE ITEM IS ADDED
+// TODO: AT LATER STAGE - EDIT MENU TYPE MANAGER SO IT REFERS TO THE MENU OBJECT RATHER THAN JUST AN ARRAY OF STRINGS
 
 class AddMenuItemViewController: UIViewController {
 
@@ -82,6 +79,7 @@ class AddMenuItemViewController: UIViewController {
         // SCREEN ADJUSTMENT
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        self.hideKeyboardWhenTappedAround()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -104,16 +102,6 @@ class AddMenuItemViewController: UIViewController {
 
 extension AddMenuItemViewController: UITextFieldDelegate {
     
-    // TODO: CAN REMOVE LATER
-    @IBAction func searchPressed(_ sender: UIButton) {
-        
-        if sender == nameTextField {
-            nameTextField.endEditing(true)
-        } else if sender == descriptionTextField {
-            descriptionTextField.endEditing(true)
-        }
-    }
-    
     // Notifies the UI when return has been pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -132,7 +120,7 @@ extension AddMenuItemViewController: UITextFieldDelegate {
             return true
         } else {
             textField.placeholder = "Type Something"
-            return false
+            return true
         }
     }
 }
@@ -143,7 +131,7 @@ extension AddMenuItemViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == menuTypePicker {
-            return menuTypesManager.menuNames.count
+            return menu.menu.count
         } else if pickerView == subMenuTypePicker {
             return selectedItemsArray.count
         }
@@ -175,7 +163,6 @@ extension AddMenuItemViewController: UIPickerViewDelegate {
             switch row {
             case 0:
                 selectedItemsArray = menuTypesManager.subMenuNames[0]
-                
             case 1:
                 selectedItemsArray = menuTypesManager.subMenuNames[1]
             default:
@@ -189,21 +176,4 @@ extension AddMenuItemViewController: UIPickerViewDelegate {
         }
     }
     
-}
-
-//MARK: - MenuTypesManagerDelegate
-
-extension AddMenuItemViewController: MenuTypesManagerDelegate {
-    
-    // TODO: CAN REMOVE LATER
-    func didUpdateSubMenuTypes(_ MenuTypesManager: MenuTypesManager, _ subMenu: [String]) {
-        DispatchQueue.main.async {
-            
-            // NOT CURRENTLY NEEDED
-        }
-    }
-    
-    func didFailWithError(_ error: Error) {
-        print(error)
-    }
 }

@@ -45,9 +45,9 @@ class MenuBrain {
         return "Not a menu item"
     }
     
-    func add(_ item: MenuItem, in MenuType: Int, and subMenuType: Int) {
+    func add(_ item: MenuItem, in menuType: Int, and subMenuType: Int) {
         
-        menu[MenuType][subMenuType].append(item)
+        menu[menuType][subMenuType].append(item)
     }
     
     func edit(_ item: MenuItem , in menuTypeSelected: Int, and subMenuTypeSelected: Int, and menuItemSelected: Int) {
