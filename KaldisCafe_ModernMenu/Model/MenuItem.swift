@@ -18,6 +18,6 @@ struct MenuItem {
         self.name = name
         self.description = description
         self.price = price
-    }
+    } 
     
 }
