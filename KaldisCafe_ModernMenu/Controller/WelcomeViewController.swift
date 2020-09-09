@@ -12,17 +12,16 @@ class WelcomeViewController: UIViewController {
     
     
     @IBAction func analyticsPressed(_ sender: RoundButton) {
-        
+        // self.performSegue(withIdentifier: "goToAnalytics", sender: self)
     }
     
     @IBAction func orderPressed(_ sender: RoundButton) {
-        
+        self.performSegue(withIdentifier: "goToTables", sender: self)
     }
     
     @IBAction func menuPressed(_ sender: RoundButton) {
         self.performSegue(withIdentifier: "goToMenuOptions", sender: self)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,4 @@ class WelcomeViewController: UIViewController {
         // IMPLEMENT HERE
     }
 
-
 }
-
