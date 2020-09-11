@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Docket {
+class Docket {
+    
+    fileprivate let menuBrain = MenuBrain()
     
     var docketItems: [DocketItem]
     var docketNumber: Int
@@ -24,6 +26,80 @@ struct Docket {
         self.totalAmount = totalAmount
         self.timeClosed = nil
         self.date = nil
+    }
+    
+    func doesDocketContain(_ itemName: String) -> Bool {
+        
+        for index in 0..<docketItems.count {
+            if docketItems[index].name == itemName {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func addItem(_ itemName: String) {
+        
+        // get price of item
+        let price = menuBrain.get("price", of: itemName, in: menuBrain.menu)
+        
+        // create new docket item
+        let docketItem = DocketItem(quantity: 1, name: itemName, price: price as! Float)
+        
+        // append new docket item to docketItems
+        docketItems.append(docketItem)
+    }
+    
+    func increaseQuantity(of itemName: String) {
+        
+        for index in 0..<docketItems.count {
+            if docketItems[index].name == itemName {
+                docketItems[index].quantity += 1
+                return
+            }
+        }
+    }
+    
+    func decreaseQuantity(of itemName: String) {
+        
+        for index in 0..<docketItems.count {
+            if docketItems[index].name == itemName {
+                
+                // decrease quantity
+                docketItems[index].quantity -= 1
+                
+                // if quantity equals zero remove item completely
+                if docketItems[index].quantity == 0 {
+                    docketItems.remove(at: index)
+                    return
+                }
+                
+                return
+            }
+        }
+    }
+    
+    func displayDocket() -> String {
+        
+        var docketReceipt = ""
+        
+        for index in 0..<docketItems.count {
+            docketReceipt += "\(docketItems[index].quantity)x\t\(docketItems[index].name)\t\(docketItems[index].price * Float(docketItems[index].quantity))0\n"
+        }
+        
+        return docketReceipt
+    }
+    
+    func getTotalAmount() -> Float {
+        
+        var total: Float = 0.0
+        
+        for index in 0..<docketItems.count {
+            total += docketItems[index].price * Float(docketItems[index].quantity)
+        }
+        
+        return total
     }
     
 }

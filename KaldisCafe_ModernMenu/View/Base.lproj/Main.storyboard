@@ -891,7 +891,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdG-wR-ZXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="-709"/>
+            <point key="canvasLocation" x="1562" y="970"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gTt-Gt-7iH">
@@ -942,7 +942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETP-TT-UmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266" y="-709"/>
+            <point key="canvasLocation" x="1562" y="1795"/>
         </scene>
         <!--Add Menu Item View Controller-->
         <scene sceneID="yaS-qo-BCl">
@@ -1139,7 +1139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPs-iR-Nkd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2265.8203125" y="137.5"/>
+            <point key="canvasLocation" x="2266" y="-673"/>
         </scene>
         <!--Edit Menu Item View Controller-->
         <scene sceneID="Adp-Ne-XiB">
@@ -1349,7 +1349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJ5-wc-fqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266" y="971"/>
+            <point key="canvasLocation" x="2266" y="138"/>
         </scene>
         <!--Delete Menu Item View Controller-->
         <scene sceneID="O4C-wK-EHw">
@@ -1461,7 +1461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4D-k1-6rj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561.5234375" y="970.3125"/>
+            <point key="canvasLocation" x="2266" y="970"/>
         </scene>
         <!--Tables View Controller-->
         <scene sceneID="Idn-4n-VqN">
@@ -1844,7 +1844,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgj-I3-iA4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.640625" y="969.53125"/>
+            <point key="canvasLocation" x="857" y="970"/>
         </scene>
         <!--Docket View Controller-->
         <scene sceneID="PBO-TC-InA">
@@ -2376,23 +2376,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4Sy-tw-G5s">
                                 <rect key="frame" x="724" y="60" width="300" height="708"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Docket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjE-fZ-BB0">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
-                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kyG-iv-ICx">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Docket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nW-VK-h23">
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="24"/>
+                                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjE-fZ-BB0">
+                                                <rect key="frame" x="169" y="0.0" width="131" height="24"/>
+                                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoB-lG-Q2C">
-                                        <rect key="frame" x="0.0" y="35" width="300" height="570"/>
+                                        <rect key="frame" x="0.0" y="39" width="300" height="566"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ay-pb-ULM">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="73"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="81.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-xn-CQW">
-                                                        <rect key="frame" x="10" y="20" width="280" height="33"/>
+                                                        <rect key="frame" x="10" y="20" width="280" height="41.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -2456,7 +2467,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="TJj-aI-Fv1" firstAttribute="top" secondItem="LoB-lG-Q2C" secondAttribute="bottom" constant="15" id="MsG-dJ-WiX"/>
-                                    <constraint firstItem="LoB-lG-Q2C" firstAttribute="top" secondItem="HjE-fZ-BB0" secondAttribute="bottom" constant="15" id="Wn7-kp-8uE"/>
                                     <constraint firstAttribute="trailing" secondItem="LoB-lG-Q2C" secondAttribute="trailing" id="ZWC-1F-syD"/>
                                     <constraint firstItem="LoB-lG-Q2C" firstAttribute="leading" secondItem="4Sy-tw-G5s" secondAttribute="leading" id="pzS-Qf-Xda"/>
                                 </constraints>
@@ -2479,12 +2489,49 @@
                         <viewLayoutGuide key="safeArea" id="ZbC-F9-oIV"/>
                     </view>
                     <navigationItem key="navigationItem" id="el2-kb-4rv"/>
+                    <connections>
+                        <outlet property="docketAmountLabel" destination="ipl-nH-YiK" id="93E-n0-fEA"/>
+                        <outlet property="docketItem1" destination="xBx-0k-d8g" id="DSp-bF-xer"/>
+                        <outlet property="docketItem10" destination="Psg-u0-2av" id="AqL-kF-1wz"/>
+                        <outlet property="docketItem11" destination="uaS-iO-CeE" id="4Ug-et-AeJ"/>
+                        <outlet property="docketItem12" destination="3ok-sf-Imj" id="Kg8-Pc-I8H"/>
+                        <outlet property="docketItem13" destination="7aJ-ob-QlS" id="PM2-ta-tjB"/>
+                        <outlet property="docketItem14" destination="WT4-qs-5xD" id="rD3-Ip-CTl"/>
+                        <outlet property="docketItem15" destination="0CL-Nh-qMz" id="qYE-Z3-s8P"/>
+                        <outlet property="docketItem16" destination="4je-GM-qwG" id="Skd-LZ-yFc"/>
+                        <outlet property="docketItem17" destination="63t-rE-59X" id="sHO-7L-6b6"/>
+                        <outlet property="docketItem18" destination="z73-B0-EQB" id="Ib5-e5-Usg"/>
+                        <outlet property="docketItem19" destination="ffZ-qc-USi" id="m7W-wU-5nB"/>
+                        <outlet property="docketItem2" destination="GBF-GZ-egP" id="ZZq-Qm-Fa3"/>
+                        <outlet property="docketItem20" destination="N9s-pe-zTL" id="H5r-xX-rgE"/>
+                        <outlet property="docketItem21" destination="fIx-Qq-yJR" id="gpN-9E-XjV"/>
+                        <outlet property="docketItem22" destination="Fjp-ZZ-RgS" id="1Qo-hT-TeU"/>
+                        <outlet property="docketItem23" destination="OGd-Yd-Y6b" id="C5h-t4-rIr"/>
+                        <outlet property="docketItem24" destination="pIf-bc-QCu" id="kuH-qM-P20"/>
+                        <outlet property="docketItem25" destination="ueB-cf-Ibj" id="oms-hI-ncU"/>
+                        <outlet property="docketItem26" destination="c8y-NH-rw4" id="SyG-na-bop"/>
+                        <outlet property="docketItem27" destination="W43-Gi-bfn" id="Erc-sA-zHl"/>
+                        <outlet property="docketItem3" destination="XKX-VY-HjP" id="uoh-3C-txF"/>
+                        <outlet property="docketItem4" destination="3KC-Na-Kyn" id="klw-WE-vqV"/>
+                        <outlet property="docketItem5" destination="Xeq-Y5-GaJ" id="ajT-Wp-Bdd"/>
+                        <outlet property="docketItem6" destination="ysS-6x-GlU" id="mUP-bB-8pB"/>
+                        <outlet property="docketItem7" destination="Rcc-mh-5U3" id="cdx-cu-wee"/>
+                        <outlet property="docketItem8" destination="7JN-tt-nUt" id="W8g-hG-u2g"/>
+                        <outlet property="docketItem9" destination="pAb-FD-DvE" id="V0c-iS-8Mp"/>
+                        <outlet property="docketNumberLabel" destination="7nW-VK-h23" id="BY9-1o-jW5"/>
+                        <outlet property="docketTextView" destination="YAO-xn-CQW" id="1jk-bG-jw2"/>
+                        <outlet property="tableNumberLabel" destination="HjE-fZ-BB0" id="fLB-ss-PrU"/>
+                        <segue destination="ZB2-UF-xco" kind="presentation" identifier="goToItemInfo" id="pqv-U1-T3Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4t-Z3-TfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.640625" y="1786.71875"/>
+            <point key="canvasLocation" x="857" y="1796"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pqv-U1-T3Z"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="Moden Menu Core Colours">
             <color red="0.84700000286102295" green="0.82700002193450928" blue="0.80400002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

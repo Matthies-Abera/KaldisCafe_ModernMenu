@@ -12,16 +12,18 @@ class TablesViewController: UIViewController {
 
     var tables = Tables()
     var currentDocketNumber = 1
+    var docketToSend: Docket?
     
     @IBAction func tablePressed(_ sender: RoundButton) {
         
         if !tables.isTableOpen(index: sender.tag) {
+            // pop up confirmation alert
             self.showAlertButtonTapped(sender)
         } else {
+            // assgining corresponding docket for table and performing segue
+            self.docketToSend = tables.tables[sender.tag - 1].docket
             self.performSegue(withIdentifier: "goToDocket", sender: self)
         }
-        
-         
     }
     
     override func viewDidLoad() {
@@ -49,10 +51,16 @@ class TablesViewController: UIViewController {
             }
             
             // Creating Docket for table selected
-            self.tables.tables[sender.tag - 1].docket = Docket(docketNumber: self.currentDocketNumber, tableNumber: sender.tag, docketItems: [], totalAmount: 0.00, timeClosed: nil, date: nil)
+            let newDocket = Docket(docketNumber: self.currentDocketNumber, tableNumber: sender.tag, docketItems: [], totalAmount: 0.00, timeClosed: nil, date: nil)
+            
+            // assigning docket to table
+            self.tables.tables[sender.tag - 1].docket = newDocket
             
             // Incrementing current docket number
             self.currentDocketNumber += 1
+            
+            // prepping docket for new view
+            self.docketToSend = newDocket
             
             // Performing segue to docket view
             self.performSegue(withIdentifier: "goToDocket", sender: self)
@@ -62,6 +70,15 @@ class TablesViewController: UIViewController {
     
         // show the alert
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "goToDocket") {
+            let destinationVC = segue.destination as! DocketViewController
+
+            destinationVC.docket = docketToSend!
+        }
     }
 
 }
