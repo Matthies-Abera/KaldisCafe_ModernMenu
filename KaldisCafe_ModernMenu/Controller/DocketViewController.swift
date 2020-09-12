@@ -10,6 +10,7 @@ import UIKit
 
 class DocketViewController: UIViewController {
     
+    var tables: Tables?
     var docket: Docket?
     var menuItemPressed: String?
     @IBOutlet weak var docketTextView: UITextView!
@@ -46,9 +47,18 @@ class DocketViewController: UIViewController {
     @IBOutlet weak var docketItem26: RoundButton!
     @IBOutlet weak var docketItem27: RoundButton!
     
+    @IBAction func closeTablePressed(_ sender: UIButton) {
+        self.showCloseTableAlert(sender)
+    }
+    
+    @IBAction func deleteTablePressed(_ sender: UIButton) {
+        self.showDeleteTableAlert(sender)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // pre generate docket 
         if let safeDocket = docket {
             docketNumberLabel.text = "Docket: \(safeDocket.docketNumber)"
             tableNumberLabel.text = "Table: \(safeDocket.tableNumber)"
@@ -131,6 +141,50 @@ class DocketViewController: UIViewController {
         }
         
     }
+    
+    func showCloseTableAlert(_ sender: UIButton) {
+        
+        // create the alert
+        let alert = UIAlertController(title: "Close Table", message: "Would you like to close this table?", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { action in
+            
+            // CLOSE TABLE + CORRESPONDING TASKS
+            
+            // segue back to tables view
+            self.performSegue(withIdentifier: "unwindSegueToTables", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showDeleteTableAlert(_ sender: UIButton) {
+    
+        // create the alert
+        let alert = UIAlertController(title: "Delete Table", message: "Would you like to delete the docket?", preferredStyle: UIAlertController.Style.alert)
+    
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { action in
+            
+            // deletes docket from table
+            if let safeTables = self.tables {
+                safeTables.tables[self.docket!.docketNumber - 1].docket = nil
+            }
+            
+            // segue back to tables view
+            self.performSegue(withIdentifier: "unwindSegueToTables", sender: self)
+        }))
+    
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+    
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 

@@ -10,11 +10,8 @@ import Foundation
 
 struct DrinkMenu {
     
-    // TODO: CHECK IF YOU NEED TO CHANGE LET TO VAR
-    var drinkMenu: [[MenuItem]] {
-        let beverageMenu = BeverageMenu().beverageMenu
-        let coffeeCeremony = CoffeCeremony().coffeeCeremony
-        
-        return [beverageMenu, coffeeCeremony]
-    }
+    var drinkMenu: [[MenuItem]] = [
+        BeverageMenu().beverageMenu,
+        CoffeCeremony().coffeeCeremony
+    ]
 }

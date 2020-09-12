@@ -10,6 +10,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    // origin initialisation of two core classes
+    var menu = Menu()
+    var tables = Tables()
     
     @IBAction func analyticsPressed(_ sender: RoundButton) {
         // self.performSegue(withIdentifier: "goToAnalytics", sender: self)
@@ -23,10 +26,15 @@ class WelcomeViewController: UIViewController {
         self.performSegue(withIdentifier: "goToMenuOptions", sender: self)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // IMPLEMENT HERE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if (segue.identifier == "goToMenuOptions") {
+           let destinationVC = segue.destination as! MenuOptionsViewController
+           destinationVC.menu = menu
+        } else if (segue.identifier == "goToTables") {
+            let destinationVC = segue.destination as! TablesViewController
+            destinationVC.menu = menu
+            destinationVC.tables = tables
+        }
     }
 
 }

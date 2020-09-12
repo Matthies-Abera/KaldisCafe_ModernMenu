@@ -10,6 +10,7 @@ import UIKit
 
 class ViewMenuViewController: UIViewController {
 
+    var menu: Menu?
     var menuItemPressed : String?
     
     @IBAction func menuItemPressed(_ sender: RoundButton) {
@@ -31,6 +32,7 @@ class ViewMenuViewController: UIViewController {
         if (segue.identifier == "goToItemInfo") {
             let destinationVC = segue.destination as! ItemInfoViewController
             
+            destinationVC.menu = menu!
             destinationVC.chosenMenuItem = menuItemPressed!
         }
     }

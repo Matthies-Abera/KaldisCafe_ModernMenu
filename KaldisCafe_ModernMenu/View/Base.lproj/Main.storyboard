@@ -2445,6 +2445,9 @@
                                                         <state key="normal" title="Pay and Close">
                                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="closeTablePressed:" destination="WNA-Jb-ZPZ" eventType="touchUpInside" id="Sta-oc-sdn"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq3-Sf-EkE">
                                                         <rect key="frame" x="150" y="0.0" width="150" height="50"/>
@@ -2452,6 +2455,9 @@
                                                         <state key="normal" title="Cancel Order">
                                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="deleteTablePressed:" destination="WNA-Jb-ZPZ" eventType="touchUpInside" id="qdD-v4-kz3"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -2522,9 +2528,11 @@
                         <outlet property="docketTextView" destination="YAO-xn-CQW" id="1jk-bG-jw2"/>
                         <outlet property="tableNumberLabel" destination="HjE-fZ-BB0" id="fLB-ss-PrU"/>
                         <segue destination="ZB2-UF-xco" kind="presentation" identifier="goToItemInfo" id="pqv-U1-T3Z"/>
+                        <segue destination="X2L-mh-0AK" kind="unwind" identifier="unwindSegueToTables" unwindAction="unwindToTablesWithSegue:" id="v7e-Cv-8wb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4t-Z3-TfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="X2L-mh-0AK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="857" y="1796"/>
         </scene>

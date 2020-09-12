@@ -8,14 +8,9 @@
 
 import UIKit
 
-// TODO: AT LATER STAGE - UPDATE PICKER VIEWS ONCE ITEM IS DELETE
-// TODO: AT LATER STAGE - EDIT MENU TYPE MANAGER SO IT REFERS TO THE MENU OBJECT RATHER THAN JUST AN ARRAY OF STRINGS
-
 class DeleteMenuItemViewController: UIViewController {
 
-    var menu = MenuBrain()
-    
-    var menuTypesManager = MenuTypesManager()
+    var menu: Menu?
     
     var selectedMenuArray: [String] = []
     
@@ -30,7 +25,17 @@ class DeleteMenuItemViewController: UIViewController {
     @IBAction func deleteItemPressed(_ sender: RoundButton) {
         
         DispatchQueue.main.async {
-            self.menu.deleteItem(in: self.menuRowSelected, and: self.subMenuRowSelected, and: self.menuItemSelected)
+            
+            if let safeMenu = self.menu {
+                if (safeMenu.menu[self.menuRowSelected][self.subMenuRowSelected].count > 0) {
+                    self.menu?.deleteItem(in: self.menuRowSelected, and: self.subMenuRowSelected, and: self.menuItemSelected)
+                    self.menuItemPicker.reloadAllComponents()
+                    
+                    if (self.menuItemSelected == safeMenu.menu[self.menuRowSelected][self.subMenuRowSelected].count) {
+                        self.menuItemSelected -= 1
+                    }
+                }
+            }
         }
     }
     
@@ -48,7 +53,9 @@ class DeleteMenuItemViewController: UIViewController {
         menuItemPicker.delegate = self
         
         // DEFAULT SUB MENU
-        self.selectedMenuArray = menuTypesManager.subMenuNames[0]
+        if let safeMenu = menu {
+            self.selectedMenuArray = safeMenu.subMenuNames[0]
+        }
     }
 
 }
@@ -57,13 +64,17 @@ class DeleteMenuItemViewController: UIViewController {
 extension DeleteMenuItemViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == menuTypePicker {
-            return menu.menu.count
-        } else if pickerView == subMenuTypePicker {
-            return menu.menu[menuRowSelected].count
-        } else if pickerView == menuItemPicker {
-            return menu.menu[menuRowSelected][subMenuRowSelected].count
+        
+        if let safeMenu = menu {
+            if pickerView == menuTypePicker {
+                return safeMenu.menu.count
+            } else if pickerView == subMenuTypePicker {
+                return safeMenu.menu[menuRowSelected].count
+            } else if pickerView == menuItemPicker {
+                return safeMenu.menu[menuRowSelected][subMenuRowSelected].count
+            }
         }
+        
         return 0
     }
     
@@ -77,18 +88,20 @@ extension DeleteMenuItemViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        let namesOfItems = menu.menu[menuRowSelected][subMenuRowSelected].map {$0.name}
-        
-        if pickerView == menuTypePicker {
-            return menuTypesManager.menuNames[row]
-        } else if pickerView == subMenuTypePicker {
-            if menuRowSelected ==  0 {
-                return menuTypesManager.subMenuNames[menuRowSelected][row]
-            } else if menuRowSelected == 1 {
-                return menuTypesManager.subMenuNames[menuRowSelected][row]
+        if let safeMenu = menu {
+            let namesOfItems = safeMenu.menu[menuRowSelected][subMenuRowSelected].map {$0.name}
+            
+            if pickerView == menuTypePicker {
+                return safeMenu.menuNames[row]
+            } else if pickerView == subMenuTypePicker {
+                if menuRowSelected ==  0 {
+                    return safeMenu.subMenuNames[menuRowSelected][row]
+                } else if menuRowSelected == 1 {
+                    return safeMenu.subMenuNames[menuRowSelected][row]
+                }
+            } else if pickerView == menuItemPicker {
+                return namesOfItems[row]
             }
-        } else if pickerView == menuItemPicker {
-            return namesOfItems[row]
         }
         
         return ""

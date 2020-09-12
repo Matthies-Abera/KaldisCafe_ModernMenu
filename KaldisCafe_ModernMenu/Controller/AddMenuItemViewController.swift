@@ -8,14 +8,10 @@
 
 import UIKit
 
-// TODO: ONCE COMPLETE WITH ADD, EDIT AND DELETE - MAKE MENU INSTANCE UNIVERSAL!
-// TODO: AT LATER STAGE - EDIT MENU TYPE MANAGER SO IT REFERS TO THE MENU OBJECT RATHER THAN JUST AN ARRAY OF STRINGS
-
 class AddMenuItemViewController: UIViewController {
 
-    var menu = MenuBrain()
+    var menu: Menu?
     
-    var menuTypesManager = MenuTypesManager()
     var selectedItemsArray: [String] = []
     
     var menuRowSelected = 0
@@ -45,14 +41,16 @@ class AddMenuItemViewController: UIViewController {
             let itemDescription = descriptionTextField.text!
             let selectedPrice = Float(priceStepperOutlet.value/2)
             
-            if(!menu.alreadyContains(itemName, in: menu.menu)) {
-                DispatchQueue.main.async {
-                    let item = MenuItem(name: itemName, description: itemDescription, price: selectedPrice)
-                    self.menu.add(item, in: self.menuRowSelected, and: self.subMenuRowSelected)
+            if let safeMenu = menu {
+                if(!safeMenu.alreadyContains(itemName)) {
+                    DispatchQueue.main.async {
+                        let item = MenuItem(name: itemName, description: itemDescription, price: selectedPrice)
+                        safeMenu.add(item, in: self.menuRowSelected, and: self.subMenuRowSelected)
+                    }
+                } else {
+                    invalidItemLabel.text = "Invalid Item: Menu Already Contains Item"
+                    invalidItemLabel.isHidden = false
                 }
-            } else {
-                invalidItemLabel.text = "Invalid Item: Menu Already Contains Item"
-                invalidItemLabel.isHidden = false
             }
         } else {
             invalidItemLabel.text = "Invalid Item: Please Enter Values for All Relevant Fields"
@@ -74,7 +72,9 @@ class AddMenuItemViewController: UIViewController {
         descriptionTextField.delegate = self
         
         // DEFAULT SUB MENU
-        self.selectedItemsArray = menuTypesManager.subMenuNames[0]
+        if let safeMenu = menu {
+            self.selectedItemsArray = safeMenu.subMenuNames[0]
+        }
         
         // SCREEN ADJUSTMENT
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -130,11 +130,15 @@ extension AddMenuItemViewController: UITextFieldDelegate {
 extension AddMenuItemViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == menuTypePicker {
-            return menu.menu.count
-        } else if pickerView == subMenuTypePicker {
-            return selectedItemsArray.count
+        
+        if let safeMenu = menu {
+            if pickerView == menuTypePicker {
+                return safeMenu.menu.count
+            } else if pickerView == subMenuTypePicker {
+                return selectedItemsArray.count
+            }
         }
+        
         return 0
     }
     
@@ -148,11 +152,15 @@ extension AddMenuItemViewController: UIPickerViewDataSource {
 extension AddMenuItemViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == menuTypePicker {
-            return menuTypesManager.menuNames[row]
-        } else if pickerView == subMenuTypePicker {
+        
+        if let safeMenu = menu {
+            if pickerView == menuTypePicker {
+                return safeMenu.menuNames[row]
+            } else if pickerView == subMenuTypePicker {
                 return selectedItemsArray[row]
+            }
         }
+        
         return ""
     }
     
@@ -160,13 +168,15 @@ extension AddMenuItemViewController: UIPickerViewDelegate {
         if pickerView == menuTypePicker {
             menuRowSelected = row
             
-            switch row {
-            case 0:
-                selectedItemsArray = menuTypesManager.subMenuNames[0]
-            case 1:
-                selectedItemsArray = menuTypesManager.subMenuNames[1]
-            default:
-                selectedItemsArray = menuTypesManager.subMenuNames[0]
+            if let safeMenu = menu {
+                switch row {
+                case 0:
+                    selectedItemsArray = safeMenu.subMenuNames[0]
+                case 1:
+                    selectedItemsArray = safeMenu.subMenuNames[1]
+                default:
+                    selectedItemsArray = safeMenu.subMenuNames[0]
+                }
             }
             
             // IMPORTANT reload the data on the item picker

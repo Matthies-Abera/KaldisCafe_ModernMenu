@@ -10,22 +10,22 @@ import Foundation
 
 class Docket {
     
-    fileprivate let menuBrain = MenuBrain()
-    
     var docketItems: [DocketItem]
     var docketNumber: Int
     var tableNumber: Int
     var totalAmount: Float
     var timeClosed: Date?
     var date: Date?
+    var menu: Menu
     
-    init(docketNumber: Int, tableNumber: Int, docketItems: [DocketItem], totalAmount: Float, timeClosed: Date?, date: Date?) {
+    init(docketNumber: Int, tableNumber: Int, docketItems: [DocketItem], totalAmount: Float, timeClosed: Date?, date: Date?, menu: Menu) {
         self.docketNumber = docketNumber
         self.tableNumber = tableNumber
         self.docketItems = []
         self.totalAmount = totalAmount
         self.timeClosed = nil
         self.date = nil
+        self.menu = menu
     }
     
     func doesDocketContain(_ itemName: String) -> Bool {
@@ -42,7 +42,7 @@ class Docket {
     func addItem(_ itemName: String) {
         
         // get price of item
-        let price = menuBrain.get("price", of: itemName, in: menuBrain.menu)
+        let price = menu.get("price", of: itemName)
         
         // create new docket item
         let docketItem = DocketItem(quantity: 1, name: itemName, price: price as! Float)

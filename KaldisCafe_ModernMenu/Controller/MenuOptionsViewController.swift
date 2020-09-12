@@ -10,6 +10,8 @@ import UIKit
 
 class MenuOptionsViewController: UIViewController {
 
+    var menu: Menu?
+    
     @IBAction func viewMenuPressed(_ sender: RoundButton) {
         self.performSegue(withIdentifier: "goToViewMenu", sender: self)
     }
@@ -25,23 +27,20 @@ class MenuOptionsViewController: UIViewController {
     @IBAction func deleteMenuItemPressed(_ sender: RoundButton) {
         self.performSegue(withIdentifier: "goToDeleteMenuItem", sender: self)
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       if (segue.identifier == "goToViewMenu") {
+           let destinationVC = segue.destination as! ViewMenuViewController
+           destinationVC.menu = menu!
+        } else if (segue.identifier == "goToAddMenuItem") {
+            let destinationVC = segue.destination as! AddMenuItemViewController
+            destinationVC.menu = menu!
+        } else if (segue.identifier == "goToEditMenuItem") {
+            let destinationVC = segue.destination as! EditMenuItemViewController
+            destinationVC.menu = menu!
+        } else if (segue.identifier == "goToDeleteMenuItem") {
+            let destinationVC = segue.destination as! DeleteMenuItemViewController
+            destinationVC.menu = menu!
+        }
     }
-    */
-
 }

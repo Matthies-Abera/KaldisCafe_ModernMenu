@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Tables {
+class Tables {
     
     var tables = [
         Table(tableNumber: 1, docket: nil),
@@ -29,6 +29,10 @@ struct Tables {
         Table(tableNumber: 16, docket: nil),
     ]
     
+    init() {
+        
+    }
+    
     func isTableOpen(index: Int) -> Bool {
         
         if (self.tables[index - 1].docket != nil) {
@@ -36,5 +40,16 @@ struct Tables {
         } else {
             return false
         }
+    }
+    
+    func anyTableIsOpen() -> Bool {
+        
+        for index in 0..<tables.count {
+            if tables[index].docket != nil {
+                return true
+            }
+        }
+        
+        return false
     }
 }
