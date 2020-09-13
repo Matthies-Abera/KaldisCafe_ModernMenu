@@ -13,5 +13,5 @@ In this app, I will be creating a simple Point Of Sale (POS) application whereby
 The first version of this application will be split up into three separate sprints, all spanning for exactly two weeks each. 
 Each sprint will focus on implementing one of the core aspects of the applicaiton:
 * Sprint 1: Implementing the Menu Feature (24/08/2020 - 06/09/2020)
-* Sprint 1: Implementing the Order Feature (7/09/2020 - 20/09/2020)
-* Sprint 1: Implementing the Analytics Feature (21/08/2020 - 04/10/2020)
+* Sprint 2: Implementing the Order Feature (7/09/2020 - 20/09/2020)
+* Sprint 3: Implementing the Analytics Feature (21/08/2020 - 04/10/2020)
