@@ -65,6 +65,7 @@
 		6D62E7562508EA11000C38A8 /* TablesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesViewController.swift; sourceTree = "<group>"; };
 		6D62E7582508EF5B000C38A8 /* DocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocketViewController.swift; sourceTree = "<group>"; };
 		6D6D360D24FA7A2B0092599B /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		6D766644250E43B800670197 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6D9E9FF0250A4A610008E540 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		6D9E9FF2250A4AA00008E540 /* Docket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Docket.swift; sourceTree = "<group>"; };
 		6D9E9FF4250A4AB30008E540 /* DocketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocketItem.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		6D2AC23A24F23EF700702704 = {
 			isa = PBXGroup;
 			children = (
+				6D766644250E43B800670197 /* README.md */,
 				6D2AC24524F23EF700702704 /* KaldisCafe_ModernMenu */,
 				6D2AC24424F23EF700702704 /* Products */,
 			);
