@@ -10,6 +10,7 @@ import Foundation
 
 struct VegetarianMenu {
     
+    /// Vegetarian Menu Variable
     var vegetarianMenu = [
         MenuItem(name: "Shiro", description: "A stew of pes flour cooked with Ethiopian blend of herbs & spices including hot pepper blend", price: 12.00),
         MenuItem(name: "Ater Kik Wot", description: "Mild stew of split beans cooked with Ethiopian blend of herbs and spices", price: 12.00),

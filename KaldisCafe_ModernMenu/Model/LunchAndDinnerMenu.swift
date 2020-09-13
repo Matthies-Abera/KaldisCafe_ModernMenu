@@ -10,6 +10,7 @@ import Foundation
 
 struct LunchAndDinnerMenu {
     
+    /// Lunch and Dinner Menu Variable
     var lunchAndDinnerMenu = [
         MenuItem(name: "Tibs", description: "Roasted beef with onion and fresh pepper served with Ethiopian bread - Injera or your choice of other bread", price: 12.00),
         MenuItem(name: "Goden Tibs", description: "Lamb ribs saut e ed in a blend of Ethiopian spices and pan-friend served with cutlets", price: 14.00),

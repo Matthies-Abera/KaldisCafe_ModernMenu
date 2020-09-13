@@ -23,6 +23,13 @@ class ItemInfoViewController: UIViewController {
         }
     }
     
+    /**
+    Displays all the necessary information of a given menu item
+     
+     - Parameter chosenItem: Name of menu item to retreive information for
+     
+     - Returns: A formatted string containing all necessary information about the item
+     */
     func displayItemInformation(for chosenItem: String) -> String {
 
         let name = menu.get("name", of: chosenItem)

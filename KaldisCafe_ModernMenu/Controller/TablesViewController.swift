@@ -88,7 +88,7 @@ class TablesViewController: UIViewController {
             }
             
             // Creating Docket for table selected
-            let newDocket = Docket(docketNumber: self.currentDocketNumber, tableNumber: sender.tag, docketItems: [], totalAmount: 0.00, timeClosed: nil, date: nil, menu: self.menu!)
+            let newDocket = Docket(docketNumber: self.currentDocketNumber, tableNumber: sender.tag, docketItems: [], totalAmount: 0.00, timeClosed: nil, dayClosed: nil, menu: self.menu!)
             
             // assigning docket to table
             self.tables!.tables[sender.tag - 1].docket = newDocket

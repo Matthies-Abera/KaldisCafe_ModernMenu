@@ -10,6 +10,7 @@ import Foundation
 
 struct ExtrasMenu {
     
+    /// Extra's Menu Variable
     var extrasMenu = [
     
         MenuItem(name: "Salad", description: "Fresh seasonal combinations of greens, tomatoes and surprises", price: 6.00),

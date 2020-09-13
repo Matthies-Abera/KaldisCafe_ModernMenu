@@ -10,6 +10,7 @@ import Foundation
 
 struct FoodMenu {
     
+    /// Food Menu Variable: Dependent on sub menu's
     var foodMenu: [[MenuItem]] = [
         BreakfastMenu().breakfastMenu,
         LunchAndDinnerMenu().lunchAndDinnerMenu,

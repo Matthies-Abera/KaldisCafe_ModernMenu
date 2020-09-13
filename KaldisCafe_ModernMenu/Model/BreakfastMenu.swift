@@ -10,6 +10,7 @@ import Foundation
 
 struct BreakfastMenu {
     
+    /// Breakfast Menu Variable
     var breakfastMenu = [
         MenuItem(name: "Qinche", description: "Crushed wheata cooked to tender & seasoned with traditional spiced butter with or without eggs", price: 8.00),
         MenuItem(name: "Foule", description: "Fava beans saut e ed with tomatoes, onions, fresh chillies peppers olive oil or spiced butter", price: 8.00),

@@ -10,6 +10,7 @@ import Foundation
 
 class Tables {
     
+    /// Tables Variable
     var tables = [
         Table(tableNumber: 1, docket: nil),
         Table(tableNumber: 2, docket: nil),
@@ -29,10 +30,18 @@ class Tables {
         Table(tableNumber: 16, docket: nil),
     ]
     
+    /// Initializes a new set of tables with the provided parts and specifications.
     init() {
         
     }
     
+    /**
+    Checks to see if a given table is currently open
+    
+    - Parameter index: Table number
+    
+    - Returns: true or false boolean value
+    */
     func isTableOpen(index: Int) -> Bool {
         
         if (self.tables[index - 1].docket != nil) {
@@ -42,6 +51,11 @@ class Tables {
         }
     }
     
+    /**
+    Checks to see if any table is open
+    
+    - Returns: true or false boolean value
+    */
     func anyTableIsOpen() -> Bool {
         
         for index in 0..<tables.count {

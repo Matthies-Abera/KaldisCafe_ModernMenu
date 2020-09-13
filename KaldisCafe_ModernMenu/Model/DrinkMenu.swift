@@ -10,6 +10,7 @@ import Foundation
 
 struct DrinkMenu {
     
+    /// Drink Menu Variable: Dependent on sub menu's
     var drinkMenu: [[MenuItem]] = [
         BeverageMenu().beverageMenu,
         CoffeCeremony().coffeeCeremony

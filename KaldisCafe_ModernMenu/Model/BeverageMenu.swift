@@ -10,6 +10,7 @@ import Foundation
 
 struct BeverageMenu {
     
+    /// Beverage Menu Variable
     var beverageMenu = [
         MenuItem(name: "Coffee", description: "Macchiato, Cafe Latte, Espresso", price: 3.00),
         MenuItem(name: "Tea", description: "Black, Green, Camomile, mint, ginger and cinnamon", price: 3.00),
