@@ -11,6 +11,8 @@ import UIKit
 class MenuOptionsViewController: UIViewController {
 
     var menu: Menu?
+    var tables: Tables?
+    @IBOutlet weak var todaysRevenueLabel: UIBarButtonItem!
     
     @IBAction func viewMenuPressed(_ sender: RoundButton) {
         self.performSegue(withIdentifier: "goToViewMenu", sender: self)
@@ -28,10 +30,19 @@ class MenuOptionsViewController: UIViewController {
         self.performSegue(withIdentifier: "goToDeleteMenuItem", sender: self)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if let safeTables = tables {
+            todaysRevenueLabel.title = "Today's Revenue: \(safeTables.todaysRevenue)0"
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if (segue.identifier == "goToViewMenu") {
-           let destinationVC = segue.destination as! ViewMenuViewController
-           destinationVC.menu = menu!
+            let destinationVC = segue.destination as! ViewMenuViewController
+            destinationVC.menu = menu!
+            destinationVC.tables = tables!
         } else if (segue.identifier == "goToAddMenuItem") {
             let destinationVC = segue.destination as! AddMenuItemViewController
             destinationVC.menu = menu!

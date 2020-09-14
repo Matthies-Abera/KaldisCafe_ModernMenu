@@ -30,9 +30,15 @@ class Tables {
         Table(tableNumber: 16, docket: nil),
     ]
     
+    /// Current Docket Number
+    var currentDocketNumber: Int
+    /// Daily Revenue
+    var todaysRevenue: Float
+    
     /// Initializes a new set of tables with the provided parts and specifications.
-    init() {
-        
+    init(currentDocketNumber: Int, todaysRevenue: Float) {
+        self.currentDocketNumber = currentDocketNumber
+        self.todaysRevenue = todaysRevenue
     }
     
     /**

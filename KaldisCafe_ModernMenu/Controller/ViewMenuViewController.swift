@@ -11,7 +11,11 @@ import UIKit
 class ViewMenuViewController: UIViewController {
 
     var menu: Menu?
+    var tables: Tables?
+    var todaysRevenue: Float?
     var menuItemPressed : String?
+    
+    @IBOutlet weak var todaysRevenueLabel: UIBarButtonItem!
     
     @IBAction func menuItemPressed(_ sender: RoundButton) {
         
@@ -20,6 +24,14 @@ class ViewMenuViewController: UIViewController {
         }
         
         self.performSegue(withIdentifier: "goToItemInfo", sender: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if let safeTables = tables {
+            todaysRevenueLabel.title = "Today's Revenue: \(safeTables.todaysRevenue)0"
+        }
     }
     
     override func viewDidLoad() {

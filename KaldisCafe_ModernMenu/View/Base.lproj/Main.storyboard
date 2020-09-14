@@ -107,8 +107,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="i7w-80-Oyb"/>
+                    <navigationItem key="navigationItem" id="i7w-80-Oyb">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Revenue: $0.00" id="OGN-C3-v0n"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="todaysRevenueLabel" destination="OGN-C3-v0n" id="WBs-j1-JRw"/>
                         <segue destination="bZU-Na-nSW" kind="show" identifier="goToMenuOptions" id="WYS-TS-mJS"/>
                         <segue destination="EJy-px-N4E" kind="show" identifier="goToTables" id="tCS-d7-ETY"/>
                     </connections>
@@ -248,8 +251,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VwC-Q5-VFD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pop-Qj-5Rs"/>
+                    <navigationItem key="navigationItem" id="pop-Qj-5Rs">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Revenue: $0.00" id="6TV-qE-3nq"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="todaysRevenueLabel" destination="6TV-qE-3nq" id="dkc-Ro-Rp4"/>
                         <segue destination="MgZ-NB-OVX" kind="show" identifier="goToViewMenu" id="RFJ-il-gfY"/>
                         <segue destination="V4P-RD-76S" kind="presentation" identifier="goToAddMenuItem" id="xxB-Ua-lAj"/>
                         <segue destination="Kuz-ud-ZbD" kind="presentation" identifier="goToEditMenuItem" id="znc-hf-efm"/>
@@ -884,8 +890,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yo0-au-W8S"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CKW-1B-ZaR"/>
+                    <navigationItem key="navigationItem" id="CKW-1B-ZaR">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Revenue: $0.00" id="ohU-7M-yUF"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="todaysRevenueLabel" destination="ohU-7M-yUF" id="vsW-Dq-hTd"/>
                         <segue destination="ZB2-UF-xco" kind="presentation" identifier="goToItemInfo" id="5er-Y1-364"/>
                     </connections>
                 </viewController>
@@ -1837,8 +1846,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hl6-kP-BRD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wbB-Gq-6aS"/>
+                    <navigationItem key="navigationItem" id="wbB-Gq-6aS">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Revenue: $0.00" id="okt-Rn-qdg"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="todaysRevenueLabel" destination="okt-Rn-qdg" id="cDp-0R-UVI"/>
                         <segue destination="WNA-Jb-ZPZ" kind="show" identifier="goToDocket" id="3Do-0u-hQW"/>
                     </connections>
                 </viewController>
@@ -2494,7 +2506,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZbC-F9-oIV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="el2-kb-4rv"/>
+                    <navigationItem key="navigationItem" id="el2-kb-4rv">
+                        <barButtonItem key="rightBarButtonItem" title="Today's Revenue: $0.00" id="pyT-55-mm6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="docketAmountLabel" destination="ipl-nH-YiK" id="93E-n0-fEA"/>
                         <outlet property="docketItem1" destination="xBx-0k-d8g" id="DSp-bF-xer"/>
@@ -2527,6 +2541,7 @@
                         <outlet property="docketNumberLabel" destination="7nW-VK-h23" id="BY9-1o-jW5"/>
                         <outlet property="docketTextView" destination="YAO-xn-CQW" id="1jk-bG-jw2"/>
                         <outlet property="tableNumberLabel" destination="HjE-fZ-BB0" id="fLB-ss-PrU"/>
+                        <outlet property="todaysRevenueLabel" destination="pyT-55-mm6" id="qv5-g6-j3E"/>
                         <segue destination="ZB2-UF-xco" kind="presentation" identifier="goToItemInfo" id="pqv-U1-T3Z"/>
                         <segue destination="X2L-mh-0AK" kind="unwind" identifier="unwindSegueToTables" unwindAction="unwindToTablesWithSegue:" id="v7e-Cv-8wb"/>
                     </connections>

@@ -13,6 +13,8 @@ class DocketViewController: UIViewController {
     var tables: Tables?
     var docket: Docket?
     var menuItemPressed: String?
+    
+    @IBOutlet weak var todaysRevenueLabel: UIBarButtonItem!
     @IBOutlet weak var docketTextView: UITextView!
     
     @IBOutlet weak var docketNumberLabel: UILabel!
@@ -55,6 +57,14 @@ class DocketViewController: UIViewController {
         self.showDeleteTableAlert(sender)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if let safeTables = tables {
+            todaysRevenueLabel.title = "Today's Revenue: \(safeTables.todaysRevenue)0"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +73,7 @@ class DocketViewController: UIViewController {
             docketNumberLabel.text = "Docket: \(safeDocket.docketNumber)"
             tableNumberLabel.text = "Table: \(safeDocket.tableNumber)"
             docketTextView.text = safeDocket.displayDocket()
-            docketAmountLabel.text = "Total: $\(safeDocket.getTotalAmount())0"
+            docketAmountLabel.text = "Total: $\(safeDocket.totalAmount)0"
         }
         
         // array of docket items - code reusability
@@ -97,13 +107,15 @@ class DocketViewController: UIViewController {
                 if let safeDocket = docket {
                     if !safeDocket.doesDocketContain(safeMenuItem) {
                         safeDocket.addItem(safeMenuItem)
+                        safeDocket.totalAmount = safeDocket.getTotalAmount()
                     } else {
                         safeDocket.increaseQuantity(of: safeMenuItem)
+                        safeDocket.totalAmount = safeDocket.getTotalAmount()
                     }
                     
                     // update docket receipt and total amount
                     docketTextView.text = safeDocket.displayDocket()
-                    docketAmountLabel.text = "Total: $\(safeDocket.getTotalAmount())0"
+                    docketAmountLabel.text = "Total: $\(safeDocket.totalAmount)0"
                 }
             }
         }
@@ -115,12 +127,13 @@ class DocketViewController: UIViewController {
             if let safeMenuItem = button.currentTitle {
                 if let safeDocket = docket {
                     if safeDocket.doesDocketContain(safeMenuItem) {
-                         safeDocket.decreaseQuantity(of: safeMenuItem)
+                        safeDocket.decreaseQuantity(of: safeMenuItem)
+                        safeDocket.totalAmount = safeDocket.getTotalAmount()
                     }
                     
                     // update docket receipt and total amount
                     docketTextView.text = safeDocket.displayDocket()
-                    docketAmountLabel.text = "Total: $\(safeDocket.getTotalAmount())0"
+                    docketAmountLabel.text = "Total: $\(safeDocket.totalAmount)0"
                 }
             }
         }
@@ -150,7 +163,15 @@ class DocketViewController: UIViewController {
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { action in
             
-            // CLOSE TABLE + CORRESPONDING TASKS
+            // adjust daily revenue, and delete docket from tables
+            if let safeTables = self.tables {
+                // adjust daily revenue
+                if let safeDocket = self.docket {
+                    safeTables.todaysRevenue += safeDocket.totalAmount
+                }
+                
+                safeTables.tables[self.docket!.tableNumber - 1].docket = nil
+            }
             
             // segue back to tables view
             self.performSegue(withIdentifier: "unwindSegueToTables", sender: self)
@@ -170,9 +191,9 @@ class DocketViewController: UIViewController {
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { action in
             
-            // deletes docket from table
+            // deletes docket from tables
             if let safeTables = self.tables {
-                safeTables.tables[self.docket!.docketNumber - 1].docket = nil
+                safeTables.tables[self.docket!.tableNumber - 1].docket = nil
             }
             
             // segue back to tables view
