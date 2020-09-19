@@ -27,6 +27,9 @@
 		6D2E0BC024F69E160071B6F5 /* DrinkMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BBF24F69E160071B6F5 /* DrinkMenu.swift */; };
 		6D2E0BC224F69E2A0071B6F5 /* BeverageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BC124F69E2A0071B6F5 /* BeverageMenu.swift */; };
 		6D2E0BC424F69E380071B6F5 /* CoffeeCeremony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E0BC324F69E380071B6F5 /* CoffeeCeremony.swift */; };
+		6D3DFAAA2515BA11009B7395 /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFAA92515BA11009B7395 /* MenuTests.swift */; };
+		6D3DFAB42515C683009B7395 /* TablesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFAB32515C683009B7395 /* TablesTests.swift */; };
+		6D3DFAB92515C69C009B7395 /* DocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DFAB82515C69C009B7395 /* DocketTests.swift */; };
 		6D62E7572508EA11000C38A8 /* TablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62E7562508EA11000C38A8 /* TablesViewController.swift */; };
 		6D62E7592508EF5B000C38A8 /* DocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62E7582508EF5B000C38A8 /* DocketViewController.swift */; };
 		6D6D360E24FA7A2B0092599B /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D360D24FA7A2B0092599B /* RoundButton.swift */; };
@@ -38,6 +41,16 @@
 		6DBFB52824FA97CF00751082 /* MenuOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBFB52724FA97CF00751082 /* MenuOptionsViewController.swift */; };
 		6DBFB52C24FAA3F000751082 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBFB52B24FAA3F000751082 /* ItemInfoViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D3DFA9B2515B96E009B7395 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D2AC23B24F23EF700702704 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D2AC24224F23EF700702704;
+			remoteInfo = KaldisCafe_ModernMenu;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6D087DF525079F8200049492 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
@@ -62,6 +75,11 @@
 		6D2E0BBF24F69E160071B6F5 /* DrinkMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkMenu.swift; sourceTree = "<group>"; };
 		6D2E0BC124F69E2A0071B6F5 /* BeverageMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageMenu.swift; sourceTree = "<group>"; };
 		6D2E0BC324F69E380071B6F5 /* CoffeeCeremony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCeremony.swift; sourceTree = "<group>"; };
+		6D3DFA962515B96E009B7395 /* KaldisCafe_ModernMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaldisCafe_ModernMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3DFA9A2515B96E009B7395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3DFAA92515BA11009B7395 /* MenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTests.swift; sourceTree = "<group>"; };
+		6D3DFAB32515C683009B7395 /* TablesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesTests.swift; sourceTree = "<group>"; };
+		6D3DFAB82515C69C009B7395 /* DocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocketTests.swift; sourceTree = "<group>"; };
 		6D62E7562508EA11000C38A8 /* TablesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesViewController.swift; sourceTree = "<group>"; };
 		6D62E7582508EF5B000C38A8 /* DocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocketViewController.swift; sourceTree = "<group>"; };
 		6D6D360D24FA7A2B0092599B /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -83,6 +101,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D3DFA932515B96E009B7395 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +116,7 @@
 			children = (
 				6D766644250E43B800670197 /* README.md */,
 				6D2AC24524F23EF700702704 /* KaldisCafe_ModernMenu */,
+				6D3DFA972515B96E009B7395 /* KaldisCafe_ModernMenuTests */,
 				6D2AC24424F23EF700702704 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				6D2AC24324F23EF700702704 /* KaldisCafe_ModernMenu.app */,
+				6D3DFA962515B96E009B7395 /* KaldisCafe_ModernMenuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +143,33 @@
 				6D2AC25424F23EF800702704 /* Info.plist */,
 			);
 			path = KaldisCafe_ModernMenu;
+			sourceTree = "<group>";
+		};
+		6D3DFA972515B96E009B7395 /* KaldisCafe_ModernMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D3DFAA42515B99B009B7395 /* Cases */,
+				6D3DFAA52515B99F009B7395 /* Data */,
+				6D3DFA9A2515B96E009B7395 /* Info.plist */,
+			);
+			path = KaldisCafe_ModernMenuTests;
+			sourceTree = "<group>";
+		};
+		6D3DFAA42515B99B009B7395 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				6D3DFAA92515BA11009B7395 /* MenuTests.swift */,
+				6D3DFAB32515C683009B7395 /* TablesTests.swift */,
+				6D3DFAB82515C69C009B7395 /* DocketTests.swift */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		6D3DFAA52515B99F009B7395 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		6D71981824F64BEF00E81620 /* Model */ = {
@@ -185,18 +239,41 @@
 			productReference = 6D2AC24324F23EF700702704 /* KaldisCafe_ModernMenu.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6D3DFA952515B96E009B7395 /* KaldisCafe_ModernMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3DFA9D2515B96E009B7395 /* Build configuration list for PBXNativeTarget "KaldisCafe_ModernMenuTests" */;
+			buildPhases = (
+				6D3DFA922515B96E009B7395 /* Sources */,
+				6D3DFA932515B96E009B7395 /* Frameworks */,
+				6D3DFA942515B96E009B7395 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D3DFA9C2515B96E009B7395 /* PBXTargetDependency */,
+			);
+			name = KaldisCafe_ModernMenuTests;
+			productName = KaldisCafe_ModernMenuTests;
+			productReference = 6D3DFA962515B96E009B7395 /* KaldisCafe_ModernMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6D2AC23B24F23EF700702704 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Thinking Bear Solutions";
 				TargetAttributes = {
 					6D2AC24224F23EF700702704 = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					6D3DFA952515B96E009B7395 = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+						TestTargetID = 6D2AC24224F23EF700702704;
 					};
 				};
 			};
@@ -214,6 +291,7 @@
 			projectRoot = "";
 			targets = (
 				6D2AC24224F23EF700702704 /* KaldisCafe_ModernMenu */,
+				6D3DFA952515B96E009B7395 /* KaldisCafe_ModernMenuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -226,6 +304,13 @@
 				6D2AC25324F23EF800702704 /* LaunchScreen.storyboard in Resources */,
 				6D2AC25024F23EF800702704 /* Assets.xcassets in Resources */,
 				6D2AC24E24F23EF700702704 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3DFA942515B96E009B7395 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +351,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D3DFA922515B96E009B7395 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3DFAB92515C69C009B7395 /* DocketTests.swift in Sources */,
+				6D3DFAB42515C683009B7395 /* TablesTests.swift in Sources */,
+				6D3DFAAA2515BA11009B7395 /* MenuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D3DFA9C2515B96E009B7395 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D2AC24224F23EF700702704 /* KaldisCafe_ModernMenu */;
+			targetProxy = 6D3DFA9B2515B96E009B7395 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6D2AC24C24F23EF700702704 /* Main.storyboard */ = {
@@ -314,6 +417,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -374,6 +478,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -440,6 +545,51 @@
 			};
 			name = Release;
 		};
+		6D3DFA9E2515B96E009B7395 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 284U29Y9VF;
+				INFOPLIST_FILE = KaldisCafe_ModernMenuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.au.ThinkingBearSolutions.KaldisCafe-ModernMenuTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KaldisCafe_ModernMenu.app/KaldisCafe_ModernMenu";
+			};
+			name = Debug;
+		};
+		6D3DFA9F2515B96E009B7395 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 284U29Y9VF;
+				INFOPLIST_FILE = KaldisCafe_ModernMenuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.au.ThinkingBearSolutions.KaldisCafe-ModernMenuTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KaldisCafe_ModernMenu.app/KaldisCafe_ModernMenu";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +607,15 @@
 			buildConfigurations = (
 				6D2AC25824F23EF800702704 /* Debug */,
 				6D2AC25924F23EF800702704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D3DFA9D2515B96E009B7395 /* Build configuration list for PBXNativeTarget "KaldisCafe_ModernMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3DFA9E2515B96E009B7395 /* Debug */,
+				6D3DFA9F2515B96E009B7395 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

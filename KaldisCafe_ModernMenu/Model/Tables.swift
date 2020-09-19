@@ -48,9 +48,9 @@ class Tables {
     
     - Returns: true or false boolean value
     */
-    func isTableOpen(index: Int) -> Bool {
+    func isTableOpen(tableNumber: Int) -> Bool {
         
-        if (self.tables[index - 1].docket != nil) {
+        if (self.tables[tableNumber - 1].docket != nil) {
             return true
         } else {
             return false

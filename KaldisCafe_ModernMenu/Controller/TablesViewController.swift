@@ -19,7 +19,7 @@ class TablesViewController: UIViewController {
     @IBAction func tablePressed(_ sender: RoundButton) {
         
         if let safeTables = tables {
-            if !safeTables.isTableOpen(index: sender.tag) {
+            if !safeTables.isTableOpen(tableNumber: sender.tag) {
                 // pop up confirmation alert
                 self.showOpenTableAlert(sender)
             } else {
