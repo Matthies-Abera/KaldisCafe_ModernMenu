@@ -8,13 +8,9 @@
 
 import UIKit
 
-// TODO: AT LATER STAGE - EDIT MENU TYPE MANAGER SO IT REFERS TO THE MENU OBJECT RATHER THAN JUST AN ARRAY OF STRINGS
-
 class EditMenuItemViewController: UIViewController {
 
-    var menu = MenuBrain()
-    
-    var menuTypesManager = MenuTypesManager()
+    var menu: Menu?
     
     var selectedMenuArray: [String] = []
     
@@ -48,9 +44,11 @@ class EditMenuItemViewController: UIViewController {
             let selectedPrice = Float(priceStepperOutlet.value/2)
             
             DispatchQueue.main.async {
-                let item = MenuItem(name: itemName, description: itemDescription, price: selectedPrice)
-                self.menu.edit(item, in: self.menuRowSelected, and: self.subMenuRowSelected, and: self.menuItemSelected)
-                self.menuItemPicker.reloadAllComponents()
+                if let safeMenu = self.menu {
+                    let item = MenuItem(name: itemName, description: itemDescription, price: selectedPrice)
+                    safeMenu.edit(item, in: self.menuRowSelected, and: self.subMenuRowSelected, and: self.menuItemSelected)
+                    self.menuItemPicker.reloadAllComponents()
+                }
             }
         } else {
             invalidItemLabel.text = "Invalid Item: Please Enter Values for All Relevant Fields"
@@ -62,10 +60,14 @@ class EditMenuItemViewController: UIViewController {
         super.viewDidLoad()
 
         // PRE LOAD CORRECT VIEW FOR FIRST ITEM DISPLAYED
-        nameTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].name
-        descriptionTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].description
-        priceStepperOutlet.value = Double(menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].price)*2
-        priceLabel.text = "$\(priceStepperOutlet.value/2)0"
+        if let safeMenu = menu {
+            if (safeMenu.menu[menuRowSelected][subMenuRowSelected].count > 0) {
+                nameTextField.text = safeMenu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].name
+                descriptionTextField.text = safeMenu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].description
+                priceStepperOutlet.value = Double(safeMenu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].price)*2
+                priceLabel.text = "$\(priceStepperOutlet.value/2)0"
+            }
+        }
         
         // ASSIGNING DELEGATES
         menuTypePicker.dataSource = self
@@ -81,7 +83,9 @@ class EditMenuItemViewController: UIViewController {
         descriptionTextField.delegate = self
         
         // DEFAULT SUB MENUS
-        self.selectedMenuArray = menuTypesManager.subMenuNames[0]
+        if let safeMenu = menu {
+            self.selectedMenuArray = safeMenu.subMenuNames[0]
+        }
         
         // SCREEN ADJUSTMENT
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -137,13 +141,17 @@ extension EditMenuItemViewController: UITextFieldDelegate {
 extension EditMenuItemViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == menuTypePicker {
-            return menu.menu.count
-        } else if pickerView == subMenuTypePicker {
-            return menu.menu[menuRowSelected].count
-        } else if pickerView == menuItemPicker {
-            return menu.menu[menuRowSelected][subMenuRowSelected].count
+        
+        if let safeMenu = menu {
+            if pickerView == menuTypePicker {
+                return safeMenu.menu.count
+            } else if pickerView == subMenuTypePicker {
+                return safeMenu.menu[menuRowSelected].count
+            } else if pickerView == menuItemPicker {
+                return safeMenu.menu[menuRowSelected][subMenuRowSelected].count
+            }
         }
+        
         return 0
     }
     
@@ -158,18 +166,20 @@ extension EditMenuItemViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        let namesOfItems = menu.menu[menuRowSelected][subMenuRowSelected].map {$0.name}
-        
-        if pickerView == menuTypePicker {
-            return menuTypesManager.menuNames[row]
-        } else if pickerView == subMenuTypePicker {
-            if menuRowSelected ==  0 {
-                return menuTypesManager.subMenuNames[menuRowSelected][row]
-            } else if menuRowSelected == 1 {
-                return menuTypesManager.subMenuNames[menuRowSelected][row]
+        if let safeMenu = menu {
+            let namesOfItems = safeMenu.menu[menuRowSelected][subMenuRowSelected].map {$0.name}
+            
+            if pickerView == menuTypePicker {
+                return safeMenu.menuNames[row]
+            } else if pickerView == subMenuTypePicker {
+                if menuRowSelected ==  0 {
+                    return safeMenu.subMenuNames[menuRowSelected][row]
+                } else if menuRowSelected == 1 {
+                    return safeMenu.subMenuNames[menuRowSelected][row]
+                }
+            } else if pickerView == menuItemPicker {
+                return namesOfItems[row]
             }
-        } else if pickerView == menuItemPicker {
-            return namesOfItems[row]
         }
         
         return ""
@@ -196,10 +206,14 @@ extension EditMenuItemViewController: UIPickerViewDelegate {
         self.menuItemPicker.selectRow(menuItemSelected, inComponent: 0, animated: true)
         
         // ADJUST NAME, DESCRIPTION AND PRICE LABELS (+ STEPPER VALUE)
-        nameTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].name
-        descriptionTextField.text = menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].description
-        priceStepperOutlet.value = Double(menu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].price)*2
-        priceLabel.text = "$\(priceStepperOutlet.value/2)0"
+        if let safeMenu = menu {
+            if (safeMenu.menu[menuRowSelected][subMenuRowSelected].count > 0) {
+                nameTextField.text = safeMenu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].name
+                descriptionTextField.text = safeMenu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].description
+                priceStepperOutlet.value = Double(safeMenu.menu[menuRowSelected][subMenuRowSelected][menuItemSelected].price)*2
+                priceLabel.text = "$\(priceStepperOutlet.value/2)0"
+            }
+        }
     }
     
 }

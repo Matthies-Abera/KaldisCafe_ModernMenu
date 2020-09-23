@@ -10,13 +10,11 @@ import Foundation
 
 struct FoodMenu {
     
-    // TODO: CHECK IF YOU NEED TO CHANGE LET TO VAR
-    var foodMenu: [[MenuItem]] {
-        let breakfastMenu = BreakfastMenu().breakfastMenu
-        let lunchAndDinnerMenu = LunchAndDinnerMenu().lunchAndDinnerMenu
-        let vegetarianMenu = VegetarianMenu().vegetarianMenu
-        let extrasMenu = ExtrasMenu().extrasMenu
-        
-        return [breakfastMenu, lunchAndDinnerMenu, vegetarianMenu, extrasMenu]
-    }
+    /// Food Menu Variable: Dependent on sub menu's
+    var foodMenu: [[MenuItem]] = [
+        BreakfastMenu().breakfastMenu,
+        LunchAndDinnerMenu().lunchAndDinnerMenu,
+        VegetarianMenu().vegetarianMenu,
+        ExtrasMenu().extrasMenu
+    ]
 }

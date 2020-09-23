@@ -10,8 +10,8 @@ import UIKit
 
 class ItemInfoViewController: UIViewController {
 
+    var menu = Menu()
     var chosenMenuItem : String?
-    var menu = MenuBrain()
     
     @IBOutlet weak var itemInformationLabel: UILabel!
     
@@ -23,23 +23,20 @@ class ItemInfoViewController: UIViewController {
         }
     }
     
+    /**
+    Displays all the necessary information of a given menu item
+     
+     - Parameter chosenItem: Name of menu item to retreive information for
+     
+     - Returns: A formatted string containing all necessary information about the item
+     */
     func displayItemInformation(for chosenItem: String) -> String {
 
-        let name = menu.get("name", of: chosenItem, in: menu.menu)
-        let description = menu.get("description", of: chosenItem, in: menu.menu)
-        let price = menu.get("price", of: chosenItem, in: menu.menu)
+        let name = menu.get("name", of: chosenItem)
+        let description = menu.get("description", of: chosenItem)
+        let price = menu.get("price", of: chosenItem)
 
         return "Name: \(name) \n\nDescription: \(description) \n\nPrice: $\(price)"
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
 }
